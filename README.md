@@ -153,10 +153,10 @@ $ npm start
 
 ## :memo: License ##
 
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
+This project is under license from MIT.
 
 
-Made with :heart: by <a href="https://github.com/{{tomasperezdev}}" target="_blank">{{Tomas Perez}}</a>
+Made with :heart: by <a href="https://github.com/tomasperezdev" target="_blank">Tomas Perez</a>
 
 &#xa0;
 
