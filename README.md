@@ -9,19 +9,19 @@
 <h1 align="center">Push Frontend Ht</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{YOUR_GITHUB_USERNAME}}/push-frontend-ht?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/tomasperezdev/push-fe-ht?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{YOUR_GITHUB_USERNAME}}/push-frontend-ht?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/tomasperezdev/push-fe-ht?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{YOUR_GITHUB_USERNAME}}/push-frontend-ht?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/tomasperezdev/push-fe-ht?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/{{YOUR_GITHUB_USERNAME}}/push-frontend-ht?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/tomasperezdev/push-fe-ht?color=56BEB8">
 
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/{{YOUR_GITHUB_USERNAME}}/push-frontend-ht?color=56BEB8" /> -->
+  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/tomasperezdev/push-fe-ht?color=56BEB8" /> -->
 
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/{{YOUR_GITHUB_USERNAME}}/push-frontend-ht?color=56BEB8" /> -->
+  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/tomasperezdev/push-fe-ht?color=56BEB8" /> -->
 
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/{{YOUR_GITHUB_USERNAME}}/push-frontend-ht?color=56BEB8" /> -->
+  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/tomasperezdev/push-fe-ht?color=56BEB8" /> -->
 </p>
 
 <!-- Status -->
@@ -46,7 +46,7 @@
 
 ## :dart: About ##
 
-Describe your project
+In this project I reproduce the screen of a web application following the instructions described and the Figma designs provided for it
 
 ## :sparkles: Features ##
 
@@ -58,10 +58,10 @@ Describe your project
 
 The following tools were used in this project:
 
-- [Expo](https://expo.io/)
-- [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
+- [ReactJs](https://react.dev/)
+- [Redux](https://redux.js.org/)
+- [MaterialUI](https://mui.com/material-ui/)
+- [Jest](https://jestjs.io/)
 - [TypeScript](https://www.typescriptlang.org/)
 
 ## :white_check_mark: Requirements ##
@@ -72,16 +72,16 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 
 ```bash
 # Clone this project
-$ git clone https://github.com/{{YOUR_GITHUB_USERNAME}}/push-frontend-ht
+$ git clone https://github.com/tomasperezdev/push-fe-ht
 
 # Access
-$ cd push-frontend-ht
+$ cd push-fe-ht
 
 # Install dependencies
-$ yarn
+$ npm install
 
 # Run the project
-$ yarn start
+$ npm start
 
 # The server will initialize in the <http://localhost:3000>
 ```
@@ -91,7 +91,7 @@ $ yarn start
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
 
-Made with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">{{YOUR_NAME}}</a>
+Made with :heart: by <a href="https://github.com/{{tomasperezdev}}" target="_blank">{{Tomas Perez}}</a>
 
 &#xa0;
 
