@@ -6,7 +6,7 @@
   <!-- <a href="https://pushfrontendht.netlify.app">Demo</a> -->
 </div>
 
-<h1 align="center">Push Frontend Ht</h1>
+<h1 align="center">Push Frontend Hiring Test</h1>
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/tomasperezdev/push-fe-ht?color=56BEB8">
@@ -34,25 +34,78 @@
 
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
-  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
+  <a href="#sparkles-features">Findings</a> &#xa0; | &#xa0;
   <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
+  <a href="#checkered_flag-starting">Run</a> &#xa0; | &#xa0;
   <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">Author</a>
+  <a href="https://github.com/tomasperezdev" target="_blank">Author</a>
 </p>
 
 <br>
 
 ## :dart: About ##
 
-In this project I reproduce the screen of a web application following the instructions described and the Figma designs provided for it
+In this project, I reproduce the screen of a web application following the instructions described and the Figma designs provided for it. Using the demo data JSON file that was included, we show a set of employee cards with their Full Names and Total Hours, data that required processing to format and calculate before displaying it
 
-## :sparkles: Features ##
+## :dart: My Approach ##
 
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+1. The requirements:
+    I. I started by checking all the provided information looking for questions, issues or misunderstandings on my side, so I could quickly communicate any need for explanation or extra information before starting to build the application
+    II. After making a list, formulating and dividing my questions as specific and accurate as I could, I then sent an email looking for some clarification, specially with some business rules I was going to define
+    III. Once I took a good look of the application layout, using the figma designs to divide the application in individual components, I started coding
+2. Building the layout
+    I. I started by choosing an UI component library for the excercise, MaterialUI was my pick, as I knew it had some elements shown in the designs that would help me build them faster and with the level of customization that I needed
+    II. I then created a constant file, to include all the colors I could identify from the designs, to have them ready for whenever I needed them, I added new ones later on, but I like to have a good base to start
+    III. With all that ready, I then created the navigation structure, defining the posible routes, paths, and the Layout components where the three pieces of the site would live, the Side Bar, the Top Bar, and the Main Content
+    IV. Finally I added a slice to have a way to identify the navigation using a simple appState variable that would help me change some styles and texts depending on the path the user was in
+3. The Components
+    I. I started with the tricky part, the drawer, creating the side bar, with some styles and populated with the routes defined, creating list items that would serve as Links to navigate to the different states of the app
+    II. Then I worked with the Top Bar, now with the updated state, I was able to place the current state as the Header, and built the user/avatar static content on the top right corner
+    III. From there, I structered the main content area, creating a specific component that was going to be the Employees screen with its search bar and the rendered Employee Cards
+    IV. Then I defined a local, temporal json array that helped me define the interface of what the Employee data would look like, and help me to start seeing some cards on the screen, no longer hard coded
+    V. Finally, I created a hook to determine wether the user was accesing the application from a desktop, tablet or mobile device. This then helped me to do some conditional styling, specially to the layout, to change what was shown depending on the width of the device screen
+4. Data processing
+    I. With the UI in place, and ready to just replace the data source, I then proceed to create a method in a separated file that would handle the "GET" the data from the demo data file provided, map the values on it, and provide a parsed and formatted array to be requested by the UI
+    II. From the requirements phase, I already identified some issues with the data. Missing or null values, unrealistic dates, and duplicate entries, so I decided to tackle the Full Name employee property first, to start flowing real data into the view
+    III. I created some local functions to have them as utils or helpers to process the mapped data, validating if there were null values, then fixating the first letter of the word to be capitalized, and setting the rest to lower case to make sure the names were formatted correctly
+    IV. Then I used a for each method to get a first glance of what the total hours property would look like for each employee, checking their "labour" prop and iterating by all the day entries found, and adding up to a total using the "total hours per day" found in the JSON
+    V. Finally, I added some assumed business rules, to see wether the date was a valid date, if it wasnt, the values would be discarded
+    VI. TODO:Validate with the answer to my questions wether I would need to check for duplicate day entries or set a maximum of hours per day an employee could adquire
+5. The tests
+    I. I usually like to do the tests after implementing and seeing everything working as expected, so once I was seen the data in the view, and made sense with the requirements, I started seeting up the tests
+    II. I created four test cases for the getEmployees function that retrived the parsed Employees data:
+        a. it "should return an array of employees with fullName and totalHours"
+          - This would make sure that the result array would include a fullName and a totalHours properties on each retrived element
+        b. it "should only count hours for real dates"
+          - Using the expected values from the demo json, and based on the assumptions made, this test checked the result information to be accurate
+        c. it "should capitalize the first letter of first and last names"
+          - Making sure every word found in the fullName property of each element would have the first letter capitalized and the rest in lowercase
+        d. it "should render the correct amount of EmployeeCard components"
+          - Rendering the Employees component, which used the getEmployees function, we could see if the amount of displayed cards with the test-id was the expected amount according to the demo data
+6. Cleaning Up
+    I. To close up the test, I then proceeded to create separate styles files for the components where all the inline css values would be store, to make the tsx files cleaner, and easier to find a specific property or value to be modified
+    II. Also, I like to keep any literal text or strings in the application in a specific place, so I created a "localizedStrings" object that included all the required label text for the application to make it easier to change whenever needed and as a base for a future localization process
+    III. Finally, I created this ReadMe file, trying to document all my process, findings, assumptions, and other considerations for building and completing this excercise
+    
+## :sparkles: Assumptions ##
+
+:heavy_check_mark: The figma desings showed both the Desktop and Tablet layout for the requirments, but didnt include a landscape view for tablets. So I assumed that it would take the desktop layout when the user was in landscape orientation\
+:heavy_check_mark: The expected date format to find in the data entries is DD-MM-YY\
+:heavy_check_mark: Total Hours can be decimal values, based on the Figma designs
+
+## 🔎 Findings ##
+
+◽️ I had to add support on validating that the First and Last Name of the employee had the first letter capitalized and all the others in lower case\
+◽️ Had to make a decision regarding the date format that was going to be accepted, since the dates provided in the demo data were valid dates, but not likely insightful information\
+◽️ Add a validation to see wether the First Name or Last Name might be null values
+
+## :sparkles: Extras ##
+
+◾️ A navigation FAB Button in the bottom right corner of the screen so the user can navigate to the other two screens when using a Tablet or Mobile\
+◾️ Support for Mobile devices\
+◾️ Unit Testing for the business logic involving the data processing
+◾️ Created a "Coming Soon" component to show in the two screens not described in the figma design, but present in the navigation menu
+- SVG taken from [the error 404 page](https://www.pushoperations.com/not-found) in the pushoperations.com website.
 
 ## :rocket: Technologies ##
 
@@ -64,7 +117,7 @@ The following tools were used in this project:
 - [Jest](https://jestjs.io/)
 - [TypeScript](https://www.typescriptlang.org/)
 
-## :white_check_mark: Requirements ##
+## :white_check_mark: Set Up ##
 
 Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
 
