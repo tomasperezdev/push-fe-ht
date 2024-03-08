@@ -1,13 +1,6 @@
-<div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Push Frontend Ht" />
-
-  &#xa0;
-
-  <!-- <a href="https://pushfrontendht.netlify.app">Demo</a> -->
-</div>
-
-<h1 align="center">Push Frontend Hiring Test</h1>
-
+<h1 align="center"> 
+  <img alt="Push Logo" src="https://assets-global.website-files.com/5fb89486431df956d62ce163/632cc0595d0556e4f306e44b_push-operations-logo.svg"> Frontend Hiring Test
+</h1>
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/tomasperezdev/push-fe-ht?color=56BEB8">
 
@@ -47,45 +40,46 @@
 
 In this project, I reproduce the screen of a web application following the instructions described and the Figma designs provided for it. Using the demo data JSON file that was included, we show a set of employee cards with their Full Names and Total Hours, data that required processing to format and calculate before displaying it
 
-## :dart: My Approach ##
+## 🕵️ My Approach ##
 
-1. The requirements:
-    I. I started by checking all the provided information looking for questions, issues or misunderstandings on my side, so I could quickly communicate any need for explanation or extra information before starting to build the application
-    II. After making a list, formulating and dividing my questions as specific and accurate as I could, I then sent an email looking for some clarification, specially with some business rules I was going to define
-    III. Once I took a good look of the application layout, using the figma designs to divide the application in individual components, I started coding
-2. Building the layout
-    I. I started by choosing an UI component library for the excercise, MaterialUI was my pick, as I knew it had some elements shown in the designs that would help me build them faster and with the level of customization that I needed
-    II. I then created a constant file, to include all the colors I could identify from the designs, to have them ready for whenever I needed them, I added new ones later on, but I like to have a good base to start
-    III. With all that ready, I then created the navigation structure, defining the posible routes, paths, and the Layout components where the three pieces of the site would live, the Side Bar, the Top Bar, and the Main Content
-    IV. Finally I added a slice to have a way to identify the navigation using a simple appState variable that would help me change some styles and texts depending on the path the user was in
-3. The Components
-    I. I started with the tricky part, the drawer, creating the side bar, with some styles and populated with the routes defined, creating list items that would serve as Links to navigate to the different states of the app
-    II. Then I worked with the Top Bar, now with the updated state, I was able to place the current state as the Header, and built the user/avatar static content on the top right corner
-    III. From there, I structered the main content area, creating a specific component that was going to be the Employees screen with its search bar and the rendered Employee Cards
-    IV. Then I defined a local, temporal json array that helped me define the interface of what the Employee data would look like, and help me to start seeing some cards on the screen, no longer hard coded
-    V. Finally, I created a hook to determine wether the user was accesing the application from a desktop, tablet or mobile device. This then helped me to do some conditional styling, specially to the layout, to change what was shown depending on the width of the device screen
-4. Data processing
-    I. With the UI in place, and ready to just replace the data source, I then proceed to create a method in a separated file that would handle the "GET" the data from the demo data file provided, map the values on it, and provide a parsed and formatted array to be requested by the UI
-    II. From the requirements phase, I already identified some issues with the data. Missing or null values, unrealistic dates, and duplicate entries, so I decided to tackle the Full Name employee property first, to start flowing real data into the view
-    III. I created some local functions to have them as utils or helpers to process the mapped data, validating if there were null values, then fixating the first letter of the word to be capitalized, and setting the rest to lower case to make sure the names were formatted correctly
-    IV. Then I used a for each method to get a first glance of what the total hours property would look like for each employee, checking their "labour" prop and iterating by all the day entries found, and adding up to a total using the "total hours per day" found in the JSON
-    V. Finally, I added some assumed business rules, to see wether the date was a valid date, if it wasnt, the values would be discarded
-    VI. TODO:Validate with the answer to my questions wether I would need to check for duplicate day entries or set a maximum of hours per day an employee could adquire
-5. The tests
-    I. I usually like to do the tests after implementing and seeing everything working as expected, so once I was seen the data in the view, and made sense with the requirements, I started seeting up the tests
-    II. I created four test cases for the getEmployees function that retrived the parsed Employees data:
-        a. it "should return an array of employees with fullName and totalHours"
-          - This would make sure that the result array would include a fullName and a totalHours properties on each retrived element
-        b. it "should only count hours for real dates"
-          - Using the expected values from the demo json, and based on the assumptions made, this test checked the result information to be accurate
-        c. it "should capitalize the first letter of first and last names"
-          - Making sure every word found in the fullName property of each element would have the first letter capitalized and the rest in lowercase
-        d. it "should render the correct amount of EmployeeCard components"
-          - Rendering the Employees component, which used the getEmployees function, we could see if the amount of displayed cards with the test-id was the expected amount according to the demo data
-6. Cleaning Up
-    I. To close up the test, I then proceeded to create separate styles files for the components where all the inline css values would be store, to make the tsx files cleaner, and easier to find a specific property or value to be modified
-    II. Also, I like to keep any literal text or strings in the application in a specific place, so I created a "localizedStrings" object that included all the required label text for the application to make it easier to change whenever needed and as a base for a future localization process
-    III. Finally, I created this ReadMe file, trying to document all my process, findings, assumptions, and other considerations for building and completing this excercise
+**1. The requirements:**\
+    **I.** I started by checking all the provided information **looking for questions**, issues or doubts on my side, so I could quickly communicate any need for explanation or extra information before starting to build the application\
+    **II.** After making a list, formulating and dividing my questions as specific and accurate as I could, I then sent an email looking for some clarification, specially with some **business rules** I was going to define\
+    **III.** Once I took a good look of the application layout, using the figma designs to divide the application in individual components, I started coding\
+**2. Building the layout** \
+    **I.** I started by choosing an **UI component library** for the excercise, MaterialUI was my pick, as I knew it had some elements shown in the designs that would help me build them faster and with the level of customization that I needed\
+    **II.** I then created a constant file, to include **all the colors** I could identify from the designs, to have them ready for whenever I needed them, I added new ones later on, but I like to have a good base to start\
+    **III.** With all that ready, I then created the **navigation structure**, defining the posible routes, paths, and the Layout components where the three pieces of the site would live, the Side Bar, the Top Bar, and the Main Content\
+    **IV.** Finally I added a slice to have a way to identify the navigation using a **simple appState** variable that would help me change some styles and texts depending on the path the user was in\
+**3. The Components**\
+    **I.** I started with the tricky part, **the drawer**, creating the side bar, with some styles and populated with the routes defined, creating list items that would serve as Links to navigate to the different states of the app\
+    **II.** Then I worked with the **Top Bar**, now with the updated state, I was able to place the current state as the Header, and built the user/avatar static content on the top right corner\
+    **III.** From there, I structered the **main content area**, creating a specific component that was going to be the Employees screen with its search bar and the rendered Employee Cards\
+    **IV.** Then I defined a local, **temporal json array** that helped me define the interface of what the Employee data would look like, and help me to start seeing some cards on the screen, no longer hard coded\
+    **V.** Finally, I created a **hook** to determine wether the user was accesing the application from a **desktop, tablet or mobile device**. This then helped me to do some conditional styling, specially to the layout, to change what was shown depending on the width of the device screen\
+**4. Data processing**\
+    **I.** With the UI in place, and ready to just replace the data source, I then proceed to create a method in a separated file that would handle the "GET" the data from the **demo data file provided**, map the values on it, and provide a parsed and formatted array to be requested by the UI\
+    **II.** From the requirements phase, I already identified some issues with the data. **Missing or null values**, **unrealistic dates**, and **duplicate entries**, so I decided to tackle the fullName employee property first, to start flowing **real data into the view**\
+    **III.** I created some local functions to have them as **utils or helpers** to process the mapped data, validating **if there were null values**, then **fixating the first letter** of the word to be capitalized, and setting the **rest to lower case** to make sure the names were formatted correctly\
+    **IV.** Then I used a for each method to get a first glance of what the **total hours property** would look like for each employee, checking their "labour" prop and **iterating by all the day entries** found, and adding up to a total using the "total hours per day" found in the JSON\
+    **V.** Finally, I added some assumed **business rules**, to see wether the date was a **valid date**, if it wasnt, the values would be discarded\
+    **VI.** **TODO:**Validate with the answer to my questions wether I would need to check for duplicate day entries or set a maximum of hours per day an employee could adquire\
+**5. The tests**\
+    **I**. I usually like to do the tests **after implementing** and seeing everything working as expected, so once I was seen the data in the view, and made sense with the requirements, I started seeting up the tests\
+    **II.** I created **four test cases** for the getEmployees function that retrived the parsed Employees data:\
+        **a.** it "should return an array of employees with fullName and totalHours"\
+          **-** This would make sure that the result array would **include** a fullName and a totalHours properties on each retrived element\
+        **b.** it "should only count hours for real dates"\
+          **-** Using the **expected values** from the demo json, and based on the assumptions made, this test checked the result information to be accurate\
+        **c.** it "should capitalize the first letter of first and last names"\
+          **-** Making sure every word found in the fullName property of each element would have the **first letter capitalized and the rest in lowercase**\
+        **d.** it "should render the correct amount of EmployeeCard components"\
+          **-** **Rendering** the Employees component, which used the getEmployees function, we could see if the amount of displayed cards with the test-id was the expected amount according to the demo data\
+**6.** Cleaning Up\
+    **I.** To close up the test, I then proceeded to create **separate styles files** for the components where all the inline css values would be store, to make the tsx files cleaner, and easier to find a specific property or value to be modified\
+    **II.** Also, I like to keep any **hard coded text or string** in the application in a specific place, so I created a "localizedStrings" object that included all the required label text for the application to make it easier to change whenever needed and as a base for a future localization process\
+    **III.** Then, I moved the local data **formatting functions** to its own utils file, to have them available anywwhere else of needed and for easy access if any chance is required\
+    **IV.** Finally, I created this **ReadMe file**, trying to document all my process, findings, assumptions, and other considerations for building and completing this excercise\
     
 ## :sparkles: Assumptions ##
 
