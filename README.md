@@ -1,5 +1,5 @@
 <h1 align="center"> 
-  <img alt="Push Logo" src="https://assets-global.website-files.com/5fb89486431df956d62ce163/632cc0595d0556e4f306e44b_push-operations-logo.svg"> Frontend Hiring Test
+  <img alt="Push Logo" src="https://assets-global.website-files.com/5fb89486431df956d62ce163/5fd25493adfb0dd6c286a727_Push-Favicon.png"> Push Frontend Hiring Test
 </h1>
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/tomasperezdev/push-fe-ht?color=56BEB8">
