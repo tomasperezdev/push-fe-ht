@@ -37,5 +37,6 @@ export const EmployeeCardStyles = {
       color: colorsConfig.mainFontColor,
       marginRight: "5px",
       fontSize: sizesConfigs.cards.content.fontSize,
-    }
+    },
+    warningAlert:{ width: "20px", cursor: "pointer" }
 }

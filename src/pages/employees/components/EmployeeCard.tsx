@@ -69,7 +69,7 @@ const EmployeeCard = (props: Props) => {
           {errors && errors.length > 0 && (
             <WarningIcon
               onClick={() => setErrorsAlertOpen(!errorsAlertOpen)}
-              sx={{ width: "20px", cursor: "pointer" }}
+              sx={EmployeeCardStyles.warningAlert}
               color="warning"
             />
           )}
