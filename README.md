@@ -2,19 +2,11 @@
   <img alt="Push Logo" src="https://assets-global.website-files.com/5fb89486431df956d62ce163/5fd25493adfb0dd6c286a727_Push-Favicon.png"> Push Frontend Hiring Test
 </h1>
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/tomasperezdev/push-fe-ht?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/tomasperezdev/push-fe-ht?color=1dbf73">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/tomasperezdev/push-fe-ht?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/tomasperezdev/push-fe-ht?color=1dbf73">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/tomasperezdev/push-fe-ht?color=56BEB8">
-
-  <img alt="License" src="https://img.shields.io/github/license/tomasperezdev/push-fe-ht?color=56BEB8">
-
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/tomasperezdev/push-fe-ht?color=56BEB8" /> -->
-
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/tomasperezdev/push-fe-ht?color=56BEB8" /> -->
-
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/tomasperezdev/push-fe-ht?color=56BEB8" /> -->
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/tomasperezdev/push-fe-ht?color=1dbf73">
 </p>
 
 <!-- Status -->
