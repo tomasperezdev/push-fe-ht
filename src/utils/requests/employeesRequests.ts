@@ -39,8 +39,8 @@ export const getEmployees = () => {
         let validDate = checkIfDateIsValid(entry.date);
         let validTotal = checkIfTotalIsValid(entry.total);
   
-        if (validDate && validTotal) {
-          if(shouldAddTotal) totalHours += entry.total;
+        if (validDate && validTotal && shouldAddTotal) {
+          totalHours += entry.total;
         }
         if (!validDate) {
           errors.push({

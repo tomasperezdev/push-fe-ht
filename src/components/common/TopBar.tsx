@@ -1,4 +1,12 @@
-import { AppBar, Avatar, Box, Stack, Toolbar, Typography } from "@mui/material";
+import {
+  AppBar,
+  Avatar,
+  Box,
+  Stack,
+  Toolbar,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 import sizesConfigs from "../../constants/styles/sizes";
 import { RootState } from "../../redux/store";
 import { useSelector } from "react-redux";
@@ -26,29 +34,31 @@ const Topbar = () => {
             {appState}
           </Typography>
         </Box>
-        <Box sx={TopBarStyles.userBox}>
-          <Stack
-            sx={TopBarStyles.userStack}
-            direction="row"
-            justifyContent="center"
-            alignItems="center"
-          >
-            <Avatar sx={TopBarStyles.userAvatar}>JS</Avatar>
+        <Tooltip title="Welcome :) !">
+          <Box sx={TopBarStyles.userBox}>
             <Stack
-              sx={TopBarStyles.userTextStack}
-              direction="column"
-              justifyContent="flex-start"
-              alignItems="flex-start"
+              sx={TopBarStyles.userStack}
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
             >
-              <Typography variant="subtitle1" sx={TopBarStyles.userName}>
-                John Smith
-              </Typography>
-              <Typography variant="subtitle1" sx={TopBarStyles.userEmail}>
-                johnsmith@gmail.com
-              </Typography>
+              <Avatar sx={TopBarStyles.userAvatar}>JS</Avatar>
+              <Stack
+                sx={TopBarStyles.userTextStack}
+                direction="column"
+                justifyContent="flex-start"
+                alignItems="flex-start"
+              >
+                <Typography variant="subtitle1" sx={TopBarStyles.userName}>
+                  John Smith
+                </Typography>
+                <Typography variant="subtitle1" sx={TopBarStyles.userEmail}>
+                  johnsmith@gmail.com
+                </Typography>
+              </Stack>
             </Stack>
-          </Stack>
-        </Box>
+          </Box>
+        </Tooltip>
       </Toolbar>
     </AppBar>
   );

@@ -129,6 +129,7 @@ The following tools were used in this project:
 - [Redux](https://redux.js.org/)
 - [MaterialUI](https://mui.com/material-ui/)
 - [Jest](https://jestjs.io/)
+- [momentjs](https://momentjs.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 
 ## :white_check_mark: Set Up ##

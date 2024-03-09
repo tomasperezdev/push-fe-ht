@@ -15,7 +15,7 @@ export const TopBarStyles = {
         textTransform: "capitalize",
         color: colorsConfig.mainFontColor,
     },
-    userBox:{ flexGrow: 0 },
+    userBox:{ flexGrow: 0, cursor: "default"},
     userStack:{ width: "100%" },
     userAvatar:{ bgcolor: colorsConfig.userAvatarBg },
     userTextStack:{ width: "100%" },
