@@ -14,43 +14,47 @@ export const getEmployees = () => {
     let daysWorked = [] as DayWorked[];
     item.labour.forEach((entry: any) => {
       let shouldAddTotal = true;
-      const dayAlreadyWorked = daysWorked.find((day) => day.date === entry.date);
-      if (dayAlreadyWorked) {
-        //We are assuming that the total hours worked in a day can be between 0 and 24 
-        //so we need to check if the total hours worked in a day is not greater than 24 after adding the new entry
-        if((dayAlreadyWorked.total + entry.total) > 24){
-          errors.push({
-            code: "INVALID_TOTAL_FOR_DAY",
-            message: `The total ${entry.total}hrs at ${entry.date} is invalid, the total hours worked in a day can be between 0 and 24, and the total for this day is already ${dayAlreadyWorked.total}hrs`
-          });
-          shouldAddTotal = false;
+      if(entry.date)
+      {
+        const dayAlreadyWorked = daysWorked.find((day) => day.date === entry.date);
+        if (dayAlreadyWorked) {
+          //We are assuming that the total hours worked in a day can be between 0 and 24 
+          //so we need to check if the total hours worked in a day is not greater than 24 after adding the new entry
+          if((dayAlreadyWorked.total + entry.total) > 24){
+            errors.push({
+              code: "INVALID_TOTAL_FOR_DAY",
+              message: `The total ${entry.total}hrs at ${entry.date} is invalid, the total hours worked in a day can be between 0 and 24, and the total for this day is already ${dayAlreadyWorked.total}hrs`
+            });
+            shouldAddTotal = false;
+          }
+          else{
+            dayAlreadyWorked.total += entry.total;
+          }
         }
         else{
-          dayAlreadyWorked.total += entry.total;
+          daysWorked.push({date: entry.date, total: entry.total});
+        }
+        // We only want to count the hours if the date is real
+        let validDate = checkIfDateIsValid(entry.date);
+        let validTotal = checkIfTotalIsValid(entry.total);
+  
+        if (validDate && validTotal) {
+          if(shouldAddTotal) totalHours += entry.total;
+        }
+        if (!validDate) {
+          errors.push({
+            code: "INVALID_DATE",
+            message: `The date ${entry.date} with ${entry.total}hrs is invalid`
+          });
+        }
+        if (!validTotal) {
+          errors.push({
+            code: "INVALID_TOTAL",
+            message: `The total ${entry.total}hrs at ${entry.date} is invalid`
+          });
         }
       }
-      else{
-        daysWorked.push({date: entry.date, total: entry.total});
-      }
-      // We only want to count the hours if the date is real
-      let validDate = checkIfDateIsValid(entry.date);
-      let validTotal = checkIfTotalIsValid(entry.total);
-
-      if (validDate && validTotal) {
-        if(shouldAddTotal) totalHours += entry.total;
-      }
-      if (!validDate) {
-        errors.push({
-          code: "INVALID_DATE",
-          message: `The date ${entry.date} with ${entry.total}hrs is invalid`
-        });
-      }
-      if (!validTotal) {
-        errors.push({
-          code: "INVALID_TOTAL",
-          message: `The total ${entry.total}hrs at ${entry.date} is invalid`
-        });
-      }
+      
     });
 
     //We are building the display name of the employee,
