@@ -14,6 +14,7 @@ export const getEmployees = () => {
     let daysWorked = [] as DayWorked[];
     item.labour.forEach((entry: any) => {
       let shouldAddTotal = true;
+      //We check if the date in the entry is not null, we would not want to add the total hours if the date is null
       if(entry.date)
       {
         const dayAlreadyWorked = daysWorked.find((day) => day.date === entry.date);
