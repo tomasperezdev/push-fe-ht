@@ -24,7 +24,6 @@ const Employees = (props: Props) => {
   useEffect(() => {
     if (employees.length === 0) {
       const currentEmployees = getEmployees();
-      console.log("currentEmployees", currentEmployees);
       setEmployees(currentEmployees);
       setFilteredEmployees(currentEmployees);
     }

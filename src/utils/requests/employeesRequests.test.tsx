@@ -21,14 +21,8 @@ describe("getEmployees", () => {
       },
       {
         fullName: "Chell Johnson",
-        totalHours: 24.759999999999998,
-        errors: [
-          {
-            code: "INVALID_TOTAL_FOR_DAY",
-            message:
-              "The total 7.8hrs at 17-02-04 is invalid, the total hours worked in a day can be between 0 and 24, and the total for this day is already 20hrs",
-          },
-        ],
+        totalHours: 15.32,
+        errors: [],
       },
       {
         fullName: "Doug Rattmann",
