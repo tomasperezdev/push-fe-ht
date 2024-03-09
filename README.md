@@ -104,7 +104,6 @@ In this project, I reproduce the screen of a web application following the instr
 ## :sparkles: Assumptions ##
 
 :heavy_check_mark: The figma desings showed both the Desktop and Tablet layout for the requirments, but didnt include a landscape view for tablets. So I assumed that it would take the desktop layout when the user was in landscape orientation\
-:heavy_check_mark: The expected date format to find in the data entries is DD-MM-YY\
 :heavy_check_mark: Total Hours can be decimal values, based on the Figma designs
 
 ## 🔎 Findings ##
