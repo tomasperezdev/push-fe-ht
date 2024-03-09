@@ -74,7 +74,7 @@ const Employees = (props: Props) => {
           ...EmployeesStyles.cardsStack,
         }}
         flex={1}
-        alignItems="center"
+        alignItems="flex-start"
       >
         <>{renderEmployees()}</>
         {filteredEmployees.length === 0 && (
