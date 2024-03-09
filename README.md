@@ -131,6 +131,7 @@ The following tools were used in this project:
 - [MaterialUI](https://mui.com/material-ui/)
 - [Jest](https://jestjs.io/)
 - [momentjs](https://momentjs.com/)
+- [Firebase Hosting](https://firebase.google.com/docs/hosting)
 - [TypeScript](https://www.typescriptlang.org/)
 
 ## :white_check_mark: Set Up ##
