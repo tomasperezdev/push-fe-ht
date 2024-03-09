@@ -6,12 +6,14 @@ import useCurrentDevice from "../../utils/hooks/useCurrentDevice";
 import { SupportedDevices } from "../../utils/supportedDevices";
 import { EmployeesStyles } from "./EmployeesStyles";
 import { localizedStrings } from "../../constants/localization/en";
+import { EntryError } from "../../constants/interfaces/errors";
 
 type Props = {};
 
 interface Employee {
   fullName: string;
   totalHours: number;
+  errors?: EntryError[];
 }
 
 const Employees = (props: Props) => {
@@ -22,6 +24,7 @@ const Employees = (props: Props) => {
   useEffect(() => {
     if (employees.length === 0) {
       const currentEmployees = getEmployees();
+      console.log("currentEmployees", currentEmployees);
       setEmployees(currentEmployees);
       setFilteredEmployees(currentEmployees);
     }
@@ -34,6 +37,7 @@ const Employees = (props: Props) => {
           key={index}
           fullName={item.fullName}
           totalHours={item.totalHours}
+          errors={item.errors}
         />
       );
     });

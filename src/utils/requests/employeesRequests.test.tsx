@@ -14,10 +14,37 @@ describe("getEmployees", () => {
   it("should only count hours for real dates", () => {
     const result = getEmployees();
     expect(result).toEqual([
-      { fullName: "Cave Johnson", totalHours: 0 },
-      { fullName: "Chell Johnson", totalHours: 15.32 },
-      { fullName: "Doug Rattmann", totalHours: 7.57 },
-      { fullName: "Glados", totalHours: 48 },
+      {
+        fullName: "Cave Johnson",
+        totalHours: 5.83,
+        errors: [],
+      },
+      {
+        fullName: "Chell Johnson",
+        totalHours: 24.759999999999998,
+        errors: [
+          {
+            code: "INVALID_TOTAL_FOR_DAY",
+            message:
+              "The total 7.8hrs at 17-02-04 is invalid, the total hours worked in a day can be between 0 and 24, and the total for this day is already 20hrs",
+          },
+        ],
+      },
+      {
+        fullName: "Doug Rattmann",
+        totalHours: 7.57,
+        errors: [],
+      },
+      {
+        fullName: "Glados",
+        totalHours: 0,
+        errors: [
+          {
+            code: "INVALID_TOTAL",
+            message: "The total 48hrs at 12-11-12 is invalid",
+          },
+        ],
+      },
     ]);
   });
 

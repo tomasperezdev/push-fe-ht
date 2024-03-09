@@ -69,7 +69,10 @@ In this project, I reproduce the screen of a web application following the instr
   3. I created some local functions to have them as **utils or helpers** to process the mapped data, validating **if there were null values**, then **fixating the first letter** of the word to be capitalized, and setting the **rest to lower case** to make sure the names were formatted correctly
   4. Then I used a for each method to get a first glance of what the **total hours property** would look like for each employee, checking their "labour" prop and **iterating by all the day entries** found, and adding up to a total using the "total hours per day" found in the JSON
   5. Finally, I added some assumed **business rules**, to see wether the date was a **valid date**, if it wasnt, the values would be discarded
-  6. **TODO:** Validate with the answer to my questions wether I would need to check for duplicate day entries or set a maximum of hours per day an employee could adquire
+  6. **UPDATE:** After validating the answers, the business rules established that the date format should be **YYYY-MM-DD**, that the **maximum hours** an employee can have per day **is 24**, and in any of those cases (including invalid dates) an error should be displayed
+  7. Since all the dates in the JSON provided where in a format of YY-MM-DD I decided to include **momentjs** in the project to use it to see if the given date was valid, avoiding some unexpected behavior that otherwise would require much more date validations
+  8. I also changed the Employee interface to now include an **error array**, with a code and a message, so if present, to be shown for the specific Employee with the error, and describing where, when and why the error was encountered
+  9. Using the **Alert component** from MaterialUI I was able to show a nice message in case there were any problems with the data processing
 
 **5. The tests**\
     
@@ -81,8 +84,8 @@ In this project, I reproduce the screen of a web application following the instr
       This would make sure that the result array would **include** a fullName and a totalHours properties on each retrived element
     
       ◻️ it "should only count hours for real dates"
-      
-      Using the **expected values** from the demo json, and based on the assumptions made, this test checked the result information to be accurate\
+    on the assumptions made, this test checked the result information to be accurate. **Updated** the expected values to include the new error properties\   
+      Using the **expected values** from the demo json, and based
       
       ◻️ it "should capitalize the first letter of first and last names"\
       
@@ -146,6 +149,9 @@ $ npm install
 
 # Run the project
 $ npm start
+
+# Run the tests
+$ npm run test
 
 # The server will initialize in the <http://localhost:3000>
 ```
